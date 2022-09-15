@@ -1,7 +1,7 @@
 <?php
 spl_autoload_register();
 
-use App\School\Teachers;
+use App\Objects\Teachers;
 
 require_once "includes/_functions.php"
 ?>
@@ -106,6 +106,7 @@ require_once "includes/_functions.php"
             <div class="exercice-sandbox">
                 <?php
                 echo $barbeBlanche->getText();
+                echo $akainu->getText();
                 ?>
             </div>
         </section>

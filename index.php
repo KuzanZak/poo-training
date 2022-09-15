@@ -1,7 +1,7 @@
 <?php
 spl_autoload_register();
 
-use App\School\Students;
+use App\Objects\Students;
 
 require_once "includes/_functions.php"
 ?>
