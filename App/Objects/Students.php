@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Objects;
-
+// use Datetime; 
 class Students extends Person
 {
     protected string $firstname = "";
-    protected string $lastname = "";
-    private string $date = "";
-    private int $level = 0;
-    private int $age = 0;
-    protected string $school = "";
+    protected string $lastname;
+    private string $date;
+    private int $level;
+    private int $age;
+    protected string $school;
 
     public function __construct(string $firstname, string $lastname, string $date, int $level, string $school)
     {

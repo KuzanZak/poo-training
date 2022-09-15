@@ -4,10 +4,10 @@ namespace App\Objects;
 
 class Teachers extends Person
 {
-    protected string $firstname = "";
-    protected string $lastname = "";
-    private array $disciplinesList = [];
-    protected string $school = "";
+    protected string $firstname;
+    protected string $lastname;
+    private array $disciplinesList;
+    protected string $school;
 
     public function __construct(string $firstname, string $lastname, array $disciplinesList = null, string $school = null)
     {

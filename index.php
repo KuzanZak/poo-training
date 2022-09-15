@@ -101,11 +101,7 @@ require_once "includes/_functions.php"
                 $dateM = $marco->getDate();
                 $dateA = $aokiji->getDate();
                 $marco->setAge(date("Y") - (date("Y", strtotime($dateM))));
-                // $date = date("Y", $marco->getDate());
-                // $marco->setAge(age($marco->getDate()));
                 $aokiji->setAge(date("Y") - (date("Y", strtotime($dateA))));
-                // var_dump(date("Y", strtotime($date)));
-                // var_dump(date("Y"));
                 var_dump($marco);
                 ?>
             </div>
