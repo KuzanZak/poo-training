@@ -2,6 +2,8 @@
 spl_autoload_register();
 
 use App\School\Students;
+
+require_once "includes/_functions.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,8 +80,8 @@ use App\School\Students;
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $marco = new Students("Marco", "Le phoenix", "1988-02-10", 9, "Kaigun School");
-                $aokiji = new Students("Aokiji", "Kuzan", "1987-04-30", 9, "Kaizoku School");
+                $marco = new Students("Marco", "Le phoenix", "1980-02-10", 9, "Kaigun School");
+                $aokiji = new Students("Aokiji", "Kuzan", "1979-04-30", 9, "Kaizoku School");
                 var_dump($aokiji);
                 var_dump($marco);
                 ?>
@@ -96,9 +98,14 @@ use App\School\Students;
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $marco->setAge(34);
-                $aokiji->setAge(35);
-                var_dump($aokiji);
+                $dateM = $marco->getDate();
+                $dateA = $aokiji->getDate();
+                $marco->setAge(date("Y") - (date("Y", strtotime($dateM))));
+                // $date = date("Y", $marco->getDate());
+                // $marco->setAge(age($marco->getDate()));
+                $aokiji->setAge(date("Y") - (date("Y", strtotime($dateA))));
+                // var_dump(date("Y", strtotime($date)));
+                // var_dump(date("Y"));
                 var_dump($marco);
                 ?>
             </div>

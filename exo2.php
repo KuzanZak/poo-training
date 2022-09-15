@@ -1,3 +1,11 @@
+<?php
+spl_autoload_register();
+
+use App\School\Teachers;
+
+require_once "includes/_functions.php"
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +32,7 @@
                 </ul>
             </nav>
         </header>
-        
+
         <!-- QUESTION 1 -->
         <section class="exercice">
             <h2 class="exercice-ttl">Question 1</h2>
@@ -36,11 +44,16 @@
                 Créer 2 professeurs différents.
             </p>
             <div class="exercice-sandbox">
-                
+                <?php
+                $barbeBlanche = new Teachers("Edward", "Newgate", ["piraterie", "respect"], "Kaigun School");
+                $akainu = new Teachers("Akainu", "Sakazuki", [], "Kaizoku School");
+                var_dump($barbeBlanche);
+                var_dump($akainu);
+                ?>
             </div>
         </section>
-        
-        
+
+
         <!-- QUESTION 2 -->
         <section class="exercice">
             <h2 class="exercice-ttl">Question 2</h2>
@@ -52,11 +65,16 @@
                 Afficher les écoles des 2 professeurs.
             </p>
             <div class="exercice-sandbox">
-                
+                <?php
+                $barbeBlanche->setSchool("Kaigun School v2");
+                $akainu->setSchool("Kaizoku School v2");
+                echo "Nouvelle école (" . $barbeBlanche->getFirstname() . ") : " . $barbeBlanche->getSchool() . " .<br>";
+                echo "Nouvelle école (" . $akainu->getFirstname() . ") : " . $akainu->getSchool() . " .<br>";
+                ?>
             </div>
         </section>
-        
-        
+
+
         <!-- QUESTION 3 -->
         <section class="exercice">
             <h2 class="exercice-ttl">Question 3</h2>
@@ -66,7 +84,12 @@
                 Tester l'ajout, la suppression et l'affichage sur chacun des profs.
             </p>
             <div class="exercice-sandbox">
-                
+                <?php
+                $barbeBlanche->addDiscipline("courage");
+                $barbeBlanche->addDiscipline("pouvoir");
+                $barbeBlanche->deleteDiscipline("respect");
+                var_dump($barbeBlanche->getDisciplines());
+                ?>
             </div>
         </section>
 
@@ -81,11 +104,14 @@
                 Afficher la phrase de présentation des 2 profs.
             </p>
             <div class="exercice-sandbox">
-                
+                <?php
+                echo $barbeBlanche->getText();
+                ?>
             </div>
         </section>
 
     </div>
     <div class="copyright">© Guillaume Belleuvre, 2022 - DWWM Le Havre</div>
 </body>
+
 </html>
