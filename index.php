@@ -42,10 +42,10 @@ use App\School\Students;
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $Marco = new Students("Marco", "Le phoenix", 38, 9);
-                $Aokiji = new Students("Aokiji", "Kuzan", 40, 9);
-                var_dump($Aokiji);
-                var_dump($Marco);
+                $marco = new Students("Marco", "Le phoenix", 38, 9, "Kaigun School");
+                $aokiji = new Students("Aokiji", "Kuzan", 40, 9, "Kaizoku School");
+                var_dump($aokiji);
+                var_dump($marco);
                 ?>
             </div>
         </section>
@@ -59,7 +59,12 @@ use App\School\Students;
                 Modifier le niveau scolaire des 2 élèves et les afficher.
             </p>
             <div class="exercice-sandbox">
-
+                <?php
+                $marco->setLevel(10);
+                $aokiji->setLevel(10);
+                var_dump($aokiji);
+                var_dump($marco);
+                ?>
             </div>
         </section>
 
@@ -72,7 +77,12 @@ use App\School\Students;
                 Mettez à jour l'instanciation des 2 élèves et afficher leur date de naissance.
             </p>
             <div class="exercice-sandbox">
-
+                <?php
+                $marco = new Students("Marco", "Le phoenix", "1988-02-10", 9, "Kaigun School");
+                $aokiji = new Students("Aokiji", "Kuzan", "1987-04-30", 9, "Kaizoku School");
+                var_dump($aokiji);
+                var_dump($marco);
+                ?>
             </div>
         </section>
 
@@ -85,7 +95,12 @@ use App\School\Students;
                 Afficher l'âge des 2 élèves.
             </p>
             <div class="exercice-sandbox">
-
+                <?php
+                $marco->setAge(34);
+                $aokiji->setAge(35);
+                var_dump($aokiji);
+                var_dump($marco);
+                ?>
             </div>
         </section>
 
@@ -98,7 +113,12 @@ use App\School\Students;
                 Ajouter la propriété et ajouter la donnée sur les élèves.
             </p>
             <div class="exercice-sandbox">
-
+                <?php
+                // $marco->setSchool(34);
+                // $aokiji->setSchool(35);
+                var_dump($aokiji);
+                var_dump($marco);
+                ?>
             </div>
         </section>
 
@@ -112,7 +132,10 @@ use App\School\Students;
                 Afficher la phrase de présentation des 2 élèves.
             </p>
             <div class="exercice-sandbox">
-
+                <?php
+                echo $marco->getText();
+                echo $aokiji->getText();
+                ?>
             </div>
         </section>
 
