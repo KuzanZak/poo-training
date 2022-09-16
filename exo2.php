@@ -2,6 +2,9 @@
 spl_autoload_register();
 
 use App\Objects\Teachers;
+use App\Objects\Elementary;
+use App\Objects\Middleschool;
+use App\Objects\Highschool;
 
 require_once "includes/_functions.php"
 ?>
@@ -47,8 +50,7 @@ require_once "includes/_functions.php"
                 <?php
                 $barbeBlanche = new Teachers("Edward", "Newgate", ["piraterie", "respect"], "Kaigun School");
                 $akainu = new Teachers("Akainu", "Sakazuki", [], "Kaizoku School");
-                var_dump($barbeBlanche);
-                var_dump($akainu);
+                var_dump($barbeBlanche, $akainu);
                 ?>
             </div>
         </section>
@@ -66,10 +68,11 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $barbeBlanche->setSchool("Kaigun School v2");
-                $akainu->setSchool("Kaizoku School v2");
-                echo "Nouvelle école (" . $barbeBlanche->getFirstname() . ") : " . $barbeBlanche->getSchool() . " .<br>";
-                echo "Nouvelle école (" . $akainu->getFirstname() . ") : " . $akainu->getSchool() . " .<br>";
+                $barbeBlanche->setSchool(new Highschool("Lycée Jules Patrick", "Le Havre"));
+                $akainu->setSchool(new Middleschool("Collège Anniesse Coulon", "Fécamps"));
+                var_dump($barbeBlanche, $akainu)
+                // echo "Nouvelle école (" . $barbeBlanche->getFirstname() . ") : " . $barbeBlanche->getSchool() . " .<br>";
+                // echo "Nouvelle école (" . $akainu->getFirstname() . ") : " . $akainu->getSchool() . " .<br>";
                 ?>
             </div>
         </section>
@@ -85,10 +88,13 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $barbeBlanche->addDiscipline("courage");
-                $barbeBlanche->addDiscipline("pouvoir");
-                $barbeBlanche->deleteDiscipline("respect");
-                var_dump($barbeBlanche->getDisciplines());
+                $barbeBlanche->addSubject("courage");
+                $barbeBlanche->addSubject("pouvoir");
+                $akainu->addSubject("fourberie");
+                $akainu->addSubject("trahison");
+                $barbeBlanche->removeSubject("respect");
+                echo "" . $barbeBlanche->getFirstname() . " : " . $barbeBlanche->getSubjectsToString() . ". <br>";
+                echo "" . $akainu->getFirstname() . " : " . $akainu->getSubjectsToString() . ". <br>";
                 ?>
             </div>
         </section>

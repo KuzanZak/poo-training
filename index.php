@@ -2,6 +2,7 @@
 spl_autoload_register();
 
 use App\Objects\Students;
+use App\Objects\Elementary;
 
 require_once "includes/_functions.php"
 ?>
@@ -44,10 +45,9 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $marco = new Students("Marco", "Le phoenix", 38, 9, "Kaigun School");
-                $aokiji = new Students("Aokiji", "Kuzan", 40, 9, "Kaizoku School");
-                var_dump($aokiji);
-                var_dump($marco);
+                $marco = new Students("Marco", "Le phoenix", new Datetime("2004-07-19"), "Terminale", "Kaigun School");
+                $aokiji = new Students("Aokiji", "Kuzan", new Datetime("2003-02-07"), "Licence", "Kaizoku School");
+                var_dump($aokiji, $marco);
                 ?>
             </div>
         </section>
@@ -62,10 +62,9 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $marco->setLevel(10);
-                $aokiji->setLevel(10);
-                var_dump($aokiji);
-                var_dump($marco);
+                $marco->setGrade("Licence");
+                $aokiji->setGrade("Master");
+                echo "" . $marco->getFirstname() . " : " . $marco->getGrade() . ", " . $aokiji->getFirstname() . " : " . $aokiji->getGrade() . "."
                 ?>
             </div>
         </section>
@@ -80,10 +79,14 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $marco = new Students("Marco", "Le phoenix", "1980-02-10", 9, "Kaigun School");
-                $aokiji = new Students("Aokiji", "Kuzan", "1979-04-30", 9, "Kaizoku School");
-                var_dump($aokiji);
-                var_dump($marco);
+                // echo $marco->getBirthdate()->format("Y-m-d");
+                echo $marco->showBirthdate() . "<br>";
+                echo $aokiji->showBirthdate() . "<br>";
+
+                Students::setDateFormat("l j F Y");
+
+                echo $marco->showBirthdate() . "<br>";
+                echo $aokiji->showBirthdate() . "<br>";
                 ?>
             </div>
         </section>
@@ -98,11 +101,7 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $dateM = $marco->getDate();
-                $dateA = $aokiji->getDate();
-                $marco->setAge(date("Y") - (date("Y", strtotime($dateM))));
-                $aokiji->setAge(date("Y") - (date("Y", strtotime($dateA))));
-                var_dump($marco);
+                echo "" . $marco->getFirstname() . " : " . $marco->getAge() . " ans, " . $aokiji->getFirstname() . " : " . $aokiji->getAge() . " ans."
                 ?>
             </div>
         </section>
@@ -117,10 +116,14 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                // $marco->setSchool(34);
-                // $aokiji->setSchool(35);
-                var_dump($aokiji);
-                var_dump($marco);
+                $marco->setSchool(new Elementary("Art School", "Rome"));
+                $aokiji->setSchool(new Elementary("Piano School", "Londres"));
+                // $aokiji->setSchool("Kaizoku School");
+                var_dump($aokiji->getSchool());
+                var_dump($marco->getSchool());
+                // var_dump($marco->getSchoolName());
+                // echo "" . $marco->getFirstname() . " : " . $marco->getSchool()->name . ", " . $aokiji->getFirstname() . " : " . $aokiji->getSchool()->name . "."
+
                 ?>
             </div>
         </section>
@@ -136,8 +139,8 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                echo $marco->getText();
-                echo $aokiji->getText();
+                echo $marco->introduceMySelf();
+                echo $aokiji->introduceMySelf();
                 ?>
             </div>
         </section>

@@ -2,16 +2,17 @@
 
 namespace App\Objects;
 
+use App\Objects\Schools;
+
 abstract class Person
 {
     protected string $firstname = "";
     protected string $lastname = "";
-    protected string $school = "";
-    public function __construct(string $firstname, string $lastname, string $school)
+    protected Schools $school;
+    public function __construct(string $firstname, string $lastname)
     {
         $this->firstname = $firstname;
         $this->lastname = $lastname;
-        $this->school = $school;
     }
 
     public function getFirstname(): string
@@ -32,12 +33,21 @@ abstract class Person
         $this->lastname = $lastname;
     }
 
-    public function getSchool(): string
+    public function getSchool(): Schools
     {
         return $this->school;
     }
-    public function setSchool(string $school): void
+    public function setSchool(Schools $school): void
     {
         $this->school = $school;
     }
+
+    // public function getSchoolName(): array
+    // {
+    //     $text = [];
+    //     foreach ($this->getSchool() as $school) {
+    //         $text[] = $school;
+    //     }
+    //     return $text;
+    // }
 }
