@@ -48,8 +48,8 @@ use App\Objects\School;
                 <?php
                 $kaigun = new School("Kaigun", "New World");
                 $kaizoku = new School("Kaizoku", "Marine Ford");
-                var_dump($kaigun);
-                var_dump($kaizoku);
+                echo "Ecole 1 : " . $kaigun->getName() . ", ville : " . $kaigun->getCity() . ". <br>";
+                echo "Ecole 1 : " . $kaizoku->getName() . ", ville : " . $kaizoku->getCity() . ". <br>";
                 ?>
             </div>
         </section>
@@ -70,12 +70,12 @@ use App\Objects\School;
                 // var_dump(Elementary::getLevels());
                 // var_dump(Middleschool::getLevels());
                 // var_dump(Highschool::getLevels());
-                $firstSchool = new Elementary("Basket School", "Los Angeles");
+                $firstSchool = new Elementary("Basket School", "Houston");
                 $secondSchool = new Middleschool("Anime School", "Kyoto");
                 $thirdSchool = new Highschool("Manga School", "Tokyo");
-                var_dump($firstSchool);
-                var_dump($secondSchool);
-                var_dump($thirdSchool);
+                echo "Primaire : " . $firstSchool->getName() . ", ville : " . $firstSchool->getCity() . ". <br>";
+                echo "Collège : " . $secondSchool->getName() . ", ville : " . $secondSchool->getCity() . ". <br>";
+                echo "Lycée : " . $thirdSchool->getName() . ", ville : " . $thirdSchool->getCity() . ". <br>";
                 ?>
             </div>
         </section>

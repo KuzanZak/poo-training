@@ -6,7 +6,9 @@ use App\Objects\School;
 
 abstract class Person
 {
-
+    // -----------------------------------------
+    // Statics
+    // -----------------------------------------
 
     protected static string $introduction = "Bonjour, je m'appelle ##firstname## ##lastname##";
     public static function getIntroduction(): string
@@ -29,6 +31,10 @@ abstract class Person
     {
         return str_replace(array_map(fn ($s) => "##$s##", array_keys($datas)), array_values($datas), self::getIntroduction());
     }
+
+    // -----------------------------------------
+    // Instances
+    // -----------------------------------------
 
     protected string $firstname;
     protected string $lastname;

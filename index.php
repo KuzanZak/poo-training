@@ -81,7 +81,6 @@ use App\Objects\Elementary;
             </p>
             <div class="exercice-sandbox">
                 <?php
-                // echo $marco->getBirthdate()->format("Y-m-d");
                 echo $marco->showBirthdate() . "<br>";
                 echo $aokiji->showBirthdate() . "<br>";
 
@@ -120,11 +119,7 @@ use App\Objects\Elementary;
                 <?php
                 $marco->setSchool(new Elementary("Art School", "Rome"));
                 $aokiji->setSchool(new Elementary("Piano School", "Londres"));
-                // $aokiji->setSchool("Kaizoku School");
-                var_dump($aokiji->getSchool());
-                var_dump($marco->getSchool());
-                // var_dump($marco->getSchoolName());
-                // echo "" . $marco->getFirstname() . " : " . $marco->getSchool()->name . ", " . $aokiji->getFirstname() . " : " . $aokiji->getSchool()->name . "."
+                echo "" . $marco->getFirstname() . " : " . $marco->getSchool()->getName() . ", " . $aokiji->getFirstname() . " : " . $aokiji->getSchool()->getName() . "."
 
                 ?>
             </div>

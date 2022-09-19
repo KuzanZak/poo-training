@@ -4,6 +4,9 @@ namespace App\Objects;
 
 class School
 {
+    // -----------------------------------------
+    // Instances
+    // -----------------------------------------
     protected string $name;
     protected string $city;
 
@@ -21,12 +24,12 @@ class School
     {
         $this->name = $name;
     }
-    // public function getCity(): string
-    // {
-    //     return $this->lastname;
-    // }
-    // public function setCity(string $lastname): void
-    // {
-    //     $this->lastname = $lastname;
-    // }
+    public function getCity(): string
+    {
+        return $this->city;
+    }
+    public function setCity(string $city): void
+    {
+        $this->city = $city;
+    }
 }

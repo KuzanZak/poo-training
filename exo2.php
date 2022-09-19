@@ -71,9 +71,8 @@ use App\Objects\Highschool;
                 <?php
                 $barbeBlanche->setSchool(new Highschool("Jules Patrick", "Le Havre"));
                 $akainu->setSchool(new Middleschool("Anniesse Coulon", "Fécamps"));
-                var_dump($barbeBlanche, $akainu)
-                // echo "Nouvelle école (" . $barbeBlanche->getFirstname() . ") : " . $barbeBlanche->getSchool() . " .<br>";
-                // echo "Nouvelle école (" . $akainu->getFirstname() . ") : " . $akainu->getSchool() . " .<br>";
+                echo "Nouvelle école (" . $barbeBlanche->getFirstname() . ") : " . $barbeBlanche->getSchool()->getName() . " .<br>";
+                echo "Nouvelle école (" . $akainu->getFirstname() . ") : " . $akainu->getSchool()->getName() . " .<br>";
                 ?>
             </div>
         </section>

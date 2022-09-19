@@ -26,10 +26,8 @@ class Student extends Person
     // -----------------------------------------
     // Instances
     // -----------------------------------------
-    private int $age;
     private Datetime $birthdate;
     private string $grade;
-
 
     public function __construct(string $firstname, string $lastname, Datetime $birthdate, string $grade)
     {
@@ -59,11 +57,6 @@ class Student extends Person
     {
         $this->grade = $grade;
     }
-
-    // public function __toString()
-    // {
-    //     return $this->getSchool();
-    // }
 
     public function introduceMySelf(): string
     {

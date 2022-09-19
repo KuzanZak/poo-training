@@ -7,7 +7,14 @@ use App\Objects\School;
 
 class Teacher extends Person
 {
+    // -----------------------------------------
+    // Statics
+    // -----------------------------------------
     protected static string $introduction = "Bonjour, je m'appelle ##firstname## ##lastname## et j'enseigne à l'école ##school##, les matières suivantes : ##subjects##.<br>";
+
+    // -----------------------------------------
+    // Instances
+    // -----------------------------------------
 
     private array $subjects;
 

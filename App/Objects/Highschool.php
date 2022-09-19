@@ -4,14 +4,12 @@ namespace App\Objects;
 
 class Highschool extends School
 {
+    // -----------------------------------------
+    // Statics
+    // -----------------------------------------
+
     private static array $levels = ["Seconde", "Première", "Terminale"];
     private static array $instancesList = [];
-
-    public function __construct(string $name, string $city)
-    {
-        parent::__construct($name, $city);
-        self::$instancesList[] = $this;
-    }
 
     public static function getInstances(): array
     {
@@ -28,5 +26,14 @@ class Highschool extends School
             if (in_array($yesLevel, self::$levels)) return "Le niveau scolaire (" . $yesLevel . ") est pris en charge dans cette école. <br>";
             return "Le niveau scolaire (" . $yesLevel . ")  n'est pas pris en charge dans cette école. <br>";
         }
+    }
+
+    // -----------------------------------------
+    // Instances
+    // -----------------------------------------
+    public function __construct(string $name, string $city)
+    {
+        parent::__construct($name, $city);
+        self::$instancesList[] = $this;
     }
 }
