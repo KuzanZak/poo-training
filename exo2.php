@@ -1,12 +1,13 @@
 <?php
+require_once "includes/_functions.php";
+
 spl_autoload_register();
 
-use App\Objects\Teachers;
+use App\Objects\Teacher;
 use App\Objects\Elementary;
 use App\Objects\Middleschool;
 use App\Objects\Highschool;
 
-require_once "includes/_functions.php"
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +49,8 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $barbeBlanche = new Teachers("Edward", "Newgate", ["piraterie", "respect"], "Kaigun School");
-                $akainu = new Teachers("Akainu", "Sakazuki", [], "Kaizoku School");
+                $barbeBlanche = new Teacher("Edward", "Newgate", ["piraterie", "respect"], "Kaigun School");
+                $akainu = new Teacher("Akainu", "Sakazuki", [], "Kaizoku School");
                 var_dump($barbeBlanche, $akainu);
                 ?>
             </div>
@@ -68,8 +69,8 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $barbeBlanche->setSchool(new Highschool("Lycée Jules Patrick", "Le Havre"));
-                $akainu->setSchool(new Middleschool("Collège Anniesse Coulon", "Fécamps"));
+                $barbeBlanche->setSchool(new Highschool("Jules Patrick", "Le Havre"));
+                $akainu->setSchool(new Middleschool("Anniesse Coulon", "Fécamps"));
                 var_dump($barbeBlanche, $akainu)
                 // echo "Nouvelle école (" . $barbeBlanche->getFirstname() . ") : " . $barbeBlanche->getSchool() . " .<br>";
                 // echo "Nouvelle école (" . $akainu->getFirstname() . ") : " . $akainu->getSchool() . " .<br>";
@@ -111,8 +112,8 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                echo $barbeBlanche->getText();
-                echo $akainu->getText();
+                echo $barbeBlanche->introduceMySelf();
+                echo $akainu->introduceMySelf();
                 ?>
             </div>
         </section>

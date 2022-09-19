@@ -4,15 +4,15 @@ namespace App\Objects;
 
 use DateInterval;
 use Datetime;
-use App\Objects\Schools;
+use App\Objects\School;
 
-class Students extends Person
+class Student extends Person
 {
     // -----------------------------------------
     // Statics
     // -----------------------------------------
     private static string $dateFormat = "Y-m-d";
-    private static string $introduction = "Bonjour, je m'appelle ##firstname## ##lastname## , j'ai ##age## ans et je vais à l'école ##school## en classe de ##grade##.<br>";
+    protected static string $introduction = "Bonjour, je m'appelle ##firstname## ##lastname## , j'ai ##age## ans et je vais à l'école ##school## en classe de ##grade##.<br>";
 
     public static function getDateFormat(): string
     {
@@ -22,25 +22,13 @@ class Students extends Person
     {
         self::$dateFormat = $dateFormat;
     }
-    public static function getIntroduction(): string
-    {
-        return self::$introduction;
-    }
-    public static function setIntroduction(string $introduction): void
-    {
-        self::$introduction = $introduction;
-    }
 
     // -----------------------------------------
     // Instances
     // -----------------------------------------
-
-    protected string $firstname;
-    protected string $lastname;
     private int $age;
     private Datetime $birthdate;
     private string $grade;
-    protected Schools $school; //private Schools $school; utilisez la classe Schools en tant que type de propriété
 
 
     public function __construct(string $firstname, string $lastname, Datetime $birthdate, string $grade)
@@ -72,17 +60,20 @@ class Students extends Person
         $this->grade = $grade;
     }
 
+    // public function __toString()
+    // {
+    //     return $this->getSchool();
+    // }
+
     public function introduceMySelf(): string
     {
-        $search = [
-            "firstname" => $this->getFirstname(),
-            "lastname" => $this->getLastname(),
-            "age" => $this->getAge(),
-            "school" => $this->getSchool(),
-            "grade" =>  $this->getAge()
-        ];
-        return str_replace(array_map(fn ($s) => "##$s##", array_keys($search)), array_values($search), self::getIntroduction());
-        // return "Bonjour, je m'appelle " . $this->getFirstname() . " " . $this->getLastname() . ", j'ai " . $this->getAge() . " ans et je vais à l'école " . $this->getSchool() . " en classe de " . $this->getGrade() . ".<br>";
+        return self::buildIntroduction([
+            'firstname' => $this->getFirstname(),
+            'lastname' => $this->getLastname(),
+            'age' => $this->getAge(),
+            'school' => $this->getSchool()->getName(),
+            'grade' =>  $this->getGrade()
+        ]);
     }
 
     public function getAge(): int

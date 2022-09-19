@@ -2,7 +2,7 @@
 
 namespace App\Objects;
 
-class Highschool extends Schools
+class Highschool extends School
 {
     private static array $levels = ["Seconde", "Première", "Terminale"];
     private static array $instancesList = [];

@@ -2,7 +2,7 @@
 
 namespace App\Objects;
 
-class Elementary extends Schools
+class Elementary extends School
 {
 
     private static array $levels = ["CP", "CE1", "CE2", "CM1", "CM2"];

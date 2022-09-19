@@ -1,12 +1,12 @@
 <?php
+require_once "includes/_functions.php";
 spl_autoload_register();
 
 use App\Objects\Elementary;
 use App\Objects\Middleschool;
 use App\Objects\Highschool;
-use App\Objects\Schools;
+use App\Objects\School;
 
-require_once "includes/_functions.php"
 ?>
 
 <!DOCTYPE html>
@@ -46,8 +46,8 @@ require_once "includes/_functions.php"
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $kaigun = new Schools("Kaigun", "New World");
-                $kaizoku = new Schools("Kaizoku", "Marine Ford");
+                $kaigun = new School("Kaigun", "New World");
+                $kaizoku = new School("Kaizoku", "Marine Ford");
                 var_dump($kaigun);
                 var_dump($kaizoku);
                 ?>
