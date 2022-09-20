@@ -56,7 +56,7 @@ class School
 
     public function getLevelsSchool(string $level)
     {
-        if (in_array($level, static::$levels)) return "Le niveau scolaire (" . $level . ") est pris en charge dans cette école. <br>";
-        return "Le niveau scolaire (" . $level . ")  n'est pas pris en charge dans cette école. <br>";
+        if (in_array($level, static::$levels)) return "Le niveau scolaire (" . $level . ") est pris en charge dans l'école : " . static::getName() . ".<br>";
+        return "Le niveau scolaire (" . $level . ")  n'est pas pris en charge dans l'école : " . static::getName() . ".<br>";
     }
 }
