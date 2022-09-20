@@ -6,6 +6,58 @@ use App\Objects\Elementary;
 use App\Objects\Middleschool;
 use App\Objects\Highschool;
 use App\Objects\School;
+use App\Views\Question;
+use App\Views\Page;
+
+$pageContent = '';
+
+$q1 = new Question(
+    [
+        'number' => 1,
+        'question' => "Créer une classe permettant de gérer des écoles avec un nom d'école et une ville.<br>Créer 2 écoles et afficher leurs proprités.",
+        'answer' => ''
+    ]
+);
+$pageContent .= $q1->getHTML();
+
+$q2 = new Question(
+    [
+        'number' => 2,
+        'question' => "Créer 3 classes correspondants aux 3 types d'école suivants : primaire, des collège et des lycée.<br>Pour chaque type d'école définir la liste des niveaux scolaires qu'il prend en charge (ex de niveau scolaire : \"CP\", \"CM2\", \"5ème\", \"Terminale\", ...).<br>Créer une école de chaque type.
+        ",
+        'answer' => ''
+    ]
+);
+$pageContent .= $q2->getHTML();
+
+$q3 = new Question(
+    [
+        'number' => 3,
+        'question' => "Créer une méthode permettant d'interroger un type d'école pour savoir s'il prend en charge un niveau scolaire.<br>Tester la méthode créée.",
+        'answer' => ''
+    ]
+);
+$pageContent .= $q3->getHTML();
+
+$q4 = new Question(
+    [
+        'number' => 4,
+        'question' => "Remplacer les propriétés \"école\" des élèves et des professeurs par la classe créée.<br>Ajuster le code de toutes les classes afin que tous les exercices précédents fonctionnent à nouveau.",
+        'answer' => ''
+    ]
+);
+$pageContent .= $q4->getHTML();
+
+$view = new Page(
+    [
+        'title' => 'POO - Des vues',
+        'headerTitle' => 'POO - Des vues',
+        'content' => $pageContent
+    ]
+);
+
+$view->display();
+exit;
 
 ?>
 
