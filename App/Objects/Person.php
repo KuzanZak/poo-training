@@ -38,11 +38,12 @@ abstract class Person
 
     protected string $firstname;
     protected string $lastname;
-    protected School $school;
-    public function __construct(string $firstname, string $lastname)
+    protected ?School $school;
+    public function __construct(string $firstname, string $lastname, ?School $school)
     {
         $this->firstname = $firstname;
         $this->lastname = $lastname;
+        $this->school = $school;
     }
 
     public function getFirstname(): string

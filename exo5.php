@@ -1,3 +1,8 @@
+<?php
+spl_autoload_register();
+
+use App\Objects\Template;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,51 +29,56 @@
                 </ul>
             </nav>
         </header>
-        
+
         <!-- QUESTION 1 -->
         <section class="exercice">
             <h2 class="exercice-ttl">Question 1</h2>
-            <p class="exercice-txt"> 
-                Créer une classe permettant de gérer l'affichage d'un template HTML en lisant un fichier grace à la foncton file_get_contents(). 
+            <p class="exercice-txt">
+                Créer une classe permettant de gérer l'affichage d'un template HTML en lisant un fichier grâce à la fonction file_get_contents().
             </p>
             <div class="exercice-sandbox">
-                
+                <?php
+                // echo "J'en sais rien!"
+                var_dump(file_get_contents("test.html"));
+                // echo file_get_contents("App/Objects/Template.php");
+                ?>
             </div>
         </section>
-        
+
         <!-- QUESTION 2 -->
         <section class="exercice">
             <h2 class="exercice-ttl">Question 2</h2>
-            <p class="exercice-txt"> 
+            <p class="exercice-txt">
                 Créer une classe permettant de gérer l'affichage des pages de ce mini-site.
             </p>
             <div class="exercice-sandbox">
-                
+
             </div>
         </section>
 
         <!-- QUESTION 3 -->
         <section class="exercice">
             <h2 class="exercice-ttl">Question 3</h2>
-            <p class="exercice-txt"> 
+            <p class="exercice-txt">
                 Créer une classe permettant de gérer le menu de navigation de ce site.
             </p>
             <div class="exercice-sandbox">
-                
+
             </div>
         </section>
 
         <!-- QUESTION 4 -->
         <section class="exercice">
             <h2 class="exercice-ttl">Question 4</h2>
-            <p class="exercice-txt"> 
+            <p class="exercice-txt">
                 Créer une classe permettant de gérer l'affichage des questions sur ce site.
             </p>
             <div class="exercice-sandbox">
-                
+
             </div>
         </section>
     </div>
     <div class="copyright">© Guillaume Belleuvre, 2022 - DWWM Le Havre</div>
 </body>
+
 </html>

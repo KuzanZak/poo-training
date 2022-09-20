@@ -18,7 +18,7 @@ class Teacher extends Person
 
     private array $subjects;
 
-    public function __construct(string $firstname, string $lastname, array $subjects = null, string $school = null)
+    public function __construct(string $firstname, string $lastname, array $subjects = null, ?School $school)
     {
         parent::__construct($firstname, $lastname, $school);
         $this->subjects = $subjects;

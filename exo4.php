@@ -49,7 +49,7 @@ use App\Objects\School;
                 $kaigun = new School("Kaigun", "New World");
                 $kaizoku = new School("Kaizoku", "Marine Ford");
                 echo "Ecole 1 : " . $kaigun->getName() . ", ville : " . $kaigun->getCity() . ". <br>";
-                echo "Ecole 1 : " . $kaizoku->getName() . ", ville : " . $kaizoku->getCity() . ". <br>";
+                echo "Ecole 2 : " . $kaizoku->getName() . ", ville : " . $kaizoku->getCity() . ". <br>";
                 ?>
             </div>
         </section>
@@ -67,15 +67,13 @@ use App\Objects\School;
             </p>
             <div class="exercice-sandbox">
                 <?php
-                // var_dump(Elementary::getLevels());
-                // var_dump(Middleschool::getLevels());
-                // var_dump(Highschool::getLevels());
                 $firstSchool = new Elementary("Basket School", "Houston");
                 $secondSchool = new Middleschool("Anime School", "Kyoto");
                 $thirdSchool = new Highschool("Manga School", "Tokyo");
                 echo "Primaire : " . $firstSchool->getName() . ", ville : " . $firstSchool->getCity() . ". <br>";
                 echo "Collège : " . $secondSchool->getName() . ", ville : " . $secondSchool->getCity() . ". <br>";
                 echo "Lycée : " . $thirdSchool->getName() . ", ville : " . $thirdSchool->getCity() . ". <br>";
+                var_dump($firstSchool->getLevels());
                 ?>
             </div>
         </section>
@@ -91,9 +89,9 @@ use App\Objects\School;
             </p>
             <div class="exercice-sandbox">
                 <?php
-                echo Elementary::getLevelsSchool("CP");
-                echo Middleschool::getLevelsSchool("Jeux vidéos");
-                echo Highschool::getLevelsSchool("Chant");
+                echo $firstSchool->getLevelsSchool("CP");
+                echo $secondSchool->getLevelsSchool("CM2");
+                echo $thirdSchool->getLevelsSchool("Terminale");
                 ?>
             </div>
         </section>

@@ -49,8 +49,8 @@ use App\Objects\Highschool;
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $barbeBlanche = new Teacher("Edward", "Newgate", ["piraterie", "respect"], "Kaigun School");
-                $akainu = new Teacher("Akainu", "Sakazuki", [], "Kaizoku School");
+                $barbeBlanche = new Teacher("Edward", "Newgate", ["piraterie", "respect"], new Elementary("Barbe Blanche School", "East Blue"));
+                $akainu = new Teacher("Akainu", "Sakazuki", [], new Elementary("Akainu School", "Marine Ford"));
                 var_dump($barbeBlanche, $akainu);
                 ?>
             </div>

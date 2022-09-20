@@ -8,25 +8,13 @@ class Elementary extends School
     // Statics
     // -----------------------------------------
 
-    private static array $levels = ["CP", "CE1", "CE2", "CM1", "CM2"];
+    protected static array $levels = ["CP", "CE1", "CE2", "CM1", "CM2"];
     private static array $instancesList = [];
 
 
     public static function getInstances(): array
     {
         return self::$instancesList;
-    }
-    public static function getLevels(): array
-    {
-        return self::$levels;
-    }
-
-    public static function getLevelsSchool(string $yesLevel)
-    {
-        foreach (self::$levels as $level) {
-            if (in_array($yesLevel, self::$levels)) return "Le niveau scolaire (" . $yesLevel . ") est pris en charge dans cette école. <br>";
-            return "Le niveau scolaire (" . $yesLevel . ")  n'est pas pris en charge dans cette école. <br>";
-        }
     }
 
     // -----------------------------------------

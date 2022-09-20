@@ -5,7 +5,8 @@ spl_autoload_register();
 
 use App\Objects\Student;
 use App\Objects\Elementary;
-
+use App\Objects\Highschool;
+use App\Objects\Middleschool;
 
 ?>
 <!DOCTYPE html>
@@ -47,8 +48,8 @@ use App\Objects\Elementary;
             </p>
             <div class="exercice-sandbox">
                 <?php
-                $marco = new Student("Marco", "Le phoenix", new Datetime("2004-07-19"), "Terminale", "Kaigun School");
-                $aokiji = new Student("Aokiji", "Kuzan", new Datetime("2003-02-07"), "Licence", "Kaizoku School");
+                $marco = new Student("Marco", "Le phoenix", new Datetime("2004-07-19"), "Terminale", new Highschool("Kaigun School", "Tokyo"));
+                $aokiji = new Student("Aokiji", "Kuzan", new Datetime("2003-02-07"), "Licence", new Highschool("Kaizoku School", "Kyoto"));
                 var_dump($aokiji, $marco);
                 ?>
             </div>
@@ -118,7 +119,7 @@ use App\Objects\Elementary;
             <div class="exercice-sandbox">
                 <?php
                 $marco->setSchool(new Elementary("Art School", "Rome"));
-                $aokiji->setSchool(new Elementary("Piano School", "Londres"));
+                $aokiji->setSchool(new Highschool("Piano School", "Londres"));
                 echo "" . $marco->getFirstname() . " : " . $marco->getSchool()->getName() . ", " . $aokiji->getFirstname() . " : " . $aokiji->getSchool()->getName() . "."
 
                 ?>

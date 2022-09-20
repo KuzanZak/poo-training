@@ -29,9 +29,9 @@ class Student extends Person
     private Datetime $birthdate;
     private string $grade;
 
-    public function __construct(string $firstname, string $lastname, Datetime $birthdate, string $grade)
+    public function __construct(string $firstname, string $lastname, Datetime $birthdate, string $grade, ?School $school)
     {
-        parent::__construct($firstname, $lastname);
+        parent::__construct($firstname, $lastname, $school);
         $this->birthdate = $birthdate;
         $this->grade = $grade;
     }
