@@ -49,7 +49,7 @@ use App\Objects\Middleschool;
             <div class="exercice-sandbox">
                 <?php
                 $marco = new Student("Marco", "Le phoenix", new Datetime("2004-07-19"), "Terminale", new Highschool("Kaigun School", "Tokyo"));
-                $aokiji = new Student("Aokiji", "Kuzan", new Datetime("2003-02-07"), "Licence", new Highschool("Kaizoku School", "Kyoto"));
+                $aokiji = new Student("Aokiji", "Kuzan", new Datetime("2003-02-07"), "Licence", new Middleschool("Kaizoku School", "Kyoto"));
                 var_dump($aokiji, $marco);
                 ?>
             </div>

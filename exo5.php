@@ -1,7 +1,31 @@
 <?php
 spl_autoload_register();
 
-use App\Objects\Template;
+use App\Views\Question;
+use App\Views\Page;
+
+
+$pageContent = '';
+
+$q1 = new Question(
+    [
+        'number' => 1,
+        'question' => "Créer une classe permettant de gérer l'affichage d'un template HTML en lisant un fichier grâce à la fonction file_get_contents().",
+        'answer' => ''
+    ]
+);
+$pageContent .= $q1->getHTML();
+
+$view = new Page(
+    [
+        'title' => 'POO - Des vues',
+        'headerTitle' => 'POO - Des vues',
+        'content' => $pageContent
+    ]
+);
+
+$view->display();
+exit;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +63,15 @@ use App\Objects\Template;
             <div class="exercice-sandbox">
                 <?php
                 // echo "J'en sais rien!"
-                var_dump(file_get_contents("test.html"));
+                // $view = new View(
+                //     "App/Templates/page.html",
+                //     [
+                //         'title' => 'POO - Des vues',
+                //         'headerTitle' => 'Programmation Orientée Objet - Des vues',
+                //         'content' => ''
+                //     ]
+                // );
+                // var_dump($view->getContent());
                 // echo file_get_contents("App/Objects/Template.php");
                 ?>
             </div>
