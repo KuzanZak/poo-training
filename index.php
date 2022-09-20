@@ -1,5 +1,6 @@
 <?php
 require_once "includes/_functions.php";
+require_once "includes/_config.php";
 
 spl_autoload_register();
 
@@ -9,6 +10,17 @@ use App\Objects\Highschool;
 use App\Objects\Middleschool;
 use App\Views\Question;
 use App\Views\Page;
+use App\Views\Menu;
+
+// $content = [
+//     ['href' => "index.php", 'ttlLink' => "Des élèves"],
+//     ['href' => "exo2.php", 'ttlLink' => "Des profs"],
+//     ['href' => "exo3.php", 'ttlLink' => "On s'organise"],
+//     ['href' => "exo4.php", 'ttlLink' => "Des écoles"],
+//     ['href' => "exo5.php", 'ttlLink' => "Des vues"]
+// ];
+// $menu = new Menu(1, $content[0]["href"], $content[0]["ttlLink"]);
+// var_export($menu);
 
 $pageContent = '';
 
@@ -74,12 +86,16 @@ $q6 = new Question(
 );
 $pageContent .= $q6->getHTML();
 
+
+$menu = new Menu($pages);
+
 $view = new Page(
     [
-        'title' => 'POO - Des vues',
-        'headerTitle' => 'POO - Des vues',
+        'title' => 'POO - Des élèves',
+        'headerTitle' => 'POO - Des élèves',
         'content' => $pageContent
-    ]
+    ],
+    $menu
 );
 
 $view->display();

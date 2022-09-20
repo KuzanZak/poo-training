@@ -1,5 +1,7 @@
 <?php
 require_once "includes/_functions.php";
+require_once "includes/_config.php";
+
 spl_autoload_register();
 
 use App\Objects\Elementary;
@@ -8,6 +10,7 @@ use App\Objects\Highschool;
 use App\Objects\School;
 use App\Views\Question;
 use App\Views\Page;
+use App\Views\Menu;
 
 $pageContent = '';
 
@@ -53,12 +56,16 @@ $q4 = new Question(
 );
 $pageContent .= $q4->getHTML();
 
+$menu = new Menu($pages);
+
+
 $view = new Page(
     [
-        'title' => 'POO - Des vues',
-        'headerTitle' => 'POO - Des vues',
+        'title' => 'POO - Des écoles',
+        'headerTitle' => 'POO - Des écoles',
         'content' => $pageContent
-    ]
+    ],
+    $menu
 );
 
 $view->display();

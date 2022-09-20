@@ -1,8 +1,12 @@
 <?php
+require_once "includes/_functions.php";
+require_once "includes/_config.php";
+
 spl_autoload_register();
 
 use App\Views\Question;
 use App\Views\Page;
+use App\Views\Menu;
 
 
 $pageContent = '';
@@ -34,13 +38,15 @@ $q3 = new Question(
 );
 $pageContent .= $q3->getHTML();
 
+$menu = new Menu($pages);
+
 $view = new Page(
     [
-        'title' => 'POO - Des vues',
-        'headerTitle' => 'POO - Des vues',
+        'title' => 'POO - On s\'organise',
+        'headerTitle' => 'POO - On s\'organise',
         'content' => $pageContent
-    ]
+    ],
+    $menu
 );
-
 $view->display();
 exit;
