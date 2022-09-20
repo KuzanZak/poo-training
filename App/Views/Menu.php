@@ -12,7 +12,6 @@ class Menu extends View
     {
         $this->pages = $pages;
         $this->setData(['links' => $this->getHtmlLinks()]);
-        // parent::__construct(['links' => $this->getHtmlLinks()]);
     }
 
     public function getHtmlLinks(): string
