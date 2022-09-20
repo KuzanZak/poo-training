@@ -58,7 +58,6 @@ $view = new Page(
 
 $view->display();
 exit;
-
 ?>
 
 <!DOCTYPE html>
